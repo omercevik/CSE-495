@@ -1,2 +1,4 @@
-# CSE-495
-Graduation Project I
+# Gebze Technical University
+# Computer Engineering
+# CSE-495 Graduation Project I
+
