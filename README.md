@@ -17,4 +17,4 @@ Working Operating System:
 4. ST L298N DC Motor Driver for 2 DC Motors
 5. Buzzer Module
 6. 4 x 4 Keypad Module
-7. 12V and 5V energy sources
+7. 12V and 5V Energy Sources
