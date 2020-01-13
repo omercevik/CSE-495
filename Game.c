@@ -37,13 +37,14 @@ void playGame(void)
 			key = KeyPad_WaitForKeyGetChar(timeout);
 			if(key != ' ' && key != 0)
 			{
-				gameUser[usrIndex++] = key;
-				gameUser[usrIndex++] = ' ';
-				lcd_send_cmd(0xc0);
-				lcd_send_string(gameUser);
-				if(game[counter++] + gameUser[usrIndex-2]-'0' == 9)
+				if(game[counter] + key-'0' == 9)
 				{
 					++winner;
+					gameUser[usrIndex++] = key;
+					gameUser[usrIndex++] = ' ';
+					lcd_send_cmd(0xc0);
+					lcd_send_string(gameUser);
+					++counter;
 				}
 			}
 			
