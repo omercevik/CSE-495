@@ -5,19 +5,17 @@
 #include "KeyPad.h"
 #include "Motors.h"
 
+int melodyChanger = 100;
 int timeout = 0;
-extern bool menuSelected;
-extern int melody;
 extern RTC_HandleTypeDef hrtc;
 extern bool alarmRing;
 int counter = 0;
-int melodyCounter = 0;
 int usrIndex = 6;
 char gameUser[30] = "USR :          ";
 char key = ' ';
 int winner = 0;
 bool gameContinue = true;
-int game[10] = {1, 3, 5, 7, 9};
+int game[6] = {7, 5, 3, 9, 8};
 
 void playGame(void)
 {
@@ -28,18 +26,12 @@ void playGame(void)
 	lcd_send_cmd(0xc0);
 	lcd_send_string(gameUser);
 	
-	int melodyChanger = 100;
 	while(gameContinue)
 	{	
 		while(counter < 5)
 		{
 			ultraSonicModule();
 			buzzerModule();
-			if(++melodyCounter % 10 == 0 && melodyCounter < 30)
-			{
-					melody /= 2;
-					melodyChanger *= 2;
-			}
 			HAL_Delay(melodyChanger);
 			ultraSonicModule();
 			key = KeyPad_WaitForKeyGetChar(timeout);
