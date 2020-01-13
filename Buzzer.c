@@ -6,6 +6,8 @@ int melody = 100;
 bool ButtonPressed = false;
 extern char uartBuf[100];
 extern UART_HandleTypeDef huart2;
+int melodyCounter = 0;
+extern int melodyChanger;
 
 const float ToneFreq[] = {
     1046.50, // C6
@@ -59,6 +61,11 @@ void buzzerModule(void)
 		HAL_Delay(melody);
 		stopTone();
 		HAL_Delay(melody);
+	}
+	if(++melodyCounter % 10 == 0 && melodyCounter < 30)
+	{
+			melody /= 2;
+			melodyChanger *= 2;
 	}
 	index = 0;
 	freq = 0;
