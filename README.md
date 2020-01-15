@@ -15,6 +15,7 @@ Working Operating System:
 2. HC-SR04 Ultrasonic Module
 3. 16 x 2 LCD with I2C Protocol
 4. ST L298N DC Motor Driver for 2 DC Motors
-5. Buzzer Module
-6. 4 x 4 Keypad Module
-7. 12V and 5V Energy Sources
+5. 2 DC Motors
+6. Buzzer Module
+7. 4 x 4 Keypad Module
+8. 12V and 5V Energy Sources
